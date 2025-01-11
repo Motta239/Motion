@@ -35,6 +35,8 @@ const ProgressIndicator = React.forwardRef<
     const value = isValidValueNumber(valueProp, max) ? valueProp : 0;
     const progress = useDerivedValue(() => value ?? 0);
 
+    console.error('value', progress.value);
+
     const indicator = useAnimatedStyle(() => {
       return {
         width: withSpring(
@@ -60,7 +62,7 @@ const ProgressIndicator = React.forwardRef<
         }}
         className={cn('relative h-1 w-full overflow-hidden rounded-full', className)}
         {...props}>
-        <View className="absolute bottom-0 left-0 right-0 top-0 bg-muted opacity-20" />
+        <View className=" bottom-0 left-0 right-0 top-0 bg-muted opacity-20 " />
         <Animated.View role="presentation" style={indicator} className={cn('h-full bg-primary')} />
       </View>
     );

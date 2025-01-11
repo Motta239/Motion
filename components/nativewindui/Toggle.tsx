@@ -4,7 +4,8 @@ import { useColorScheme } from '~/lib/useColorScheme';
 import { COLORS } from '~/theme/colors';
 
 function Toggle(props: React.ComponentPropsWithoutRef<typeof Switch>) {
-  const { colors } = useColorScheme();
+  const { colors, setColorScheme, colorScheme, toggleColorScheme } = useColorScheme();
+
   return (
     <Switch
       trackColor={{
